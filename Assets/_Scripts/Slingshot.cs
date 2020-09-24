@@ -7,6 +7,8 @@ public class Slingshot : MonoBehaviour
 {
     [Header("Set in Inspector")] //compiler attribute
 
+    static private Slingshot S;
+
     public GameObject prefabProjectile;
     public float velocityMult = 8f;
 
@@ -18,6 +20,17 @@ public class Slingshot : MonoBehaviour
     public bool aimingMode;
 
     private Rigidbody projectileRigidbody;
+
+    static public Vector3 LAUNCH_POS
+    {
+        get
+        {
+            if (S == null) return Vector3.zero;
+            return S.launchPos;
+        }
+    }
+
+
 
     void Awake()
     {
