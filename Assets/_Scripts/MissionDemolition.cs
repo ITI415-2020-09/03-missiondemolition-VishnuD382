@@ -103,12 +103,15 @@ public class MissionDemolition : MonoBehaviour
 
     public void SwitchView(string eView = "")
     {
+
+        print("eView: " + eView);
+
         if (eView == "")
         {
             eView = uitButton.text;
         }
         showing = eView;
-        print("testing" + showing);
+        
         switch(showing)
         {
             case "Show Slingshot":
@@ -126,7 +129,7 @@ public class MissionDemolition : MonoBehaviour
             case "Show Both":
                 FollowCam.POI = GameObject.Find("ViewBoth");
                 uitButton.text = "Show Slingshot";
-                print("Show Slingshot");
+                print("Show Both");
                 break;
 
         }
